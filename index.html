@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1QDHXN6ETQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1QDHXN6ETQ');
+</script>
 
-  <!-- ═══════════════════════════════════════════════
-       GOOGLE ANALYTICS
-       PASO: Reemplaza G-XXXXXXXXXX con tu Measurement ID
-       Cómo obtenerlo: analytics.google.com → Admin → Data Streams → tu sitio → Measurement ID
-  ═══════════════════════════════════════════════ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
 
     // Eventos personalizados de conversión
     function trackEvent(action, category, label) {
-      gtag('event', action, { event_category: category, event_label: label });
+      if (typeof gtag !== 'undefined') {
+        gtag('event', action, { event_category: category, event_label: label });
+      }
     }
-  </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dra. Valeria Acosta — Injerto Capilar · Caracas y Maracaibo</title>
@@ -869,14 +867,9 @@ function enviarWA() {
 }
 </script>
 
-  <!-- ═══════════════════════════════════════════════
-       FORMSPREE
-       PASO: Reemplaza YOUR_FORM_ID con tu Form ID
-       Cómo obtenerlo: formspree.io → New Form → copia el ID del endpoint
-       Ejemplo: https://formspree.io/f/xpwzgkla → ID = xpwzgkla
-  ═══════════════════════════════════════════════ -->
+
   <script>
-    const FORMSPREE_ID = 'YOUR_FORM_ID'; // ← REEMPLAZA ESTO
+    const FORMSPREE_ID = 'xnjeqlzj';
 
     async function enviarWA() {
       const nombre = document.getElementById('fn')?.value?.trim() || '';
